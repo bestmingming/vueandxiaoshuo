@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-bind demo</title>
+    <script src="../assets/js/vue.js"></script>
+    <style>
+            .classA {
+                color: red;
+            }
+            .classB {
+                font-size: 20px;    
+            }
+        </style>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="message" width="200px" alt="" srcset="">
+        <!-- ：是v-bind的缩写 -->
+        <a :href="baiduUrl">百度一下</a>
+        <hr>
+        <div :class="className">1.绑定class</div>
+        <div :class="{classA:isOK}">2.绑定class</div>
+        <div :class="[classA,classB]">2.绑定class数组判断</div>
+        <div :class="isOK?classA:classB">2.绑定class数组三元运算符</div>
+        <hr>
+        <div :style='{color:red,fontSize:font}'>绑定style</div>
+               styleObject: {
+        <div :style='styleObject'>绑定style</div>
+        <div>
+            <input type="checkbox" name="isOK" id="isOK" v-model="isOK" >
+            <label for="isOK">isOK={{isOK}}</label>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message:"http://e.hiphotos.baidu.com/image/pic/item/5366d0160924ab1833f8e6fd3cfae6cd7a890b09.jpg",
+                baiduUrl: "https://www.baidu.com/?tn=39042058_35_oem_dg",
+                className: 'classA',
+                isOK:false,
+                classA:'classA',
+                classB:'classB',
+                red:'green',
+               font: '20px',
+               styleObject: {
+                   color:'red',
+                   fontSize:'24px'
+                //    vue约定将font-size诸如此类的css属性‘-’去掉，将‘-’后面的字母变成大写
+
+               }
+            }
+        })
+    </script>
+</body>
+</html>

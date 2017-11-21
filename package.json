@@ -1,0 +1,17 @@
+{
+  "name": "vuetest",
+  "version": "1.0.0",
+  "description": "This is my first vue project,follow jspang.com he is a good front developer",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mingle"
+  ],
+  "author": "mingle",
+  "license": "ISC"
+}
